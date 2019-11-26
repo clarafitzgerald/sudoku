@@ -1,0 +1,25 @@
+{
+  "name": "sudoku",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "https://github.com/clarafitzgerald/sudoku.git",
+  "author": "Clara",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@types/jest": "^24.0.19",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "sass": "^1.23.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.3.31",
+    "all": "^0.0.0",
+    "jquery": "^3.4.1"
+  }
+}

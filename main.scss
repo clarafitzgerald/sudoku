@@ -1,0 +1,51 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+}
+
+body {
+  display: flex;
+
+  #grid {
+    margin: 0px;
+    box-sizing: border-box;
+    display: grid;
+    grid-auto-rows: 1fr;
+    height: 90vh;
+    width: 90vh;
+    justify-items: center;
+    align-items: center;
+    margin: 0px auto;
+    border: gray 1px solid;
+  
+  
+  
+    .cell {
+      // perspective: 1000px;
+      width:100%;
+      height: 100%;
+      border: gray 1px solid;
+      overflow: hidden;
+      text-align: center;
+    }
+
+  
+  }
+
+  #options {
+    width:15vw;
+
+    #penTypeToggle {
+      cursor: pointer;
+    }
+  }
+
+
+} 
+
+
+
+
+
+
+  
