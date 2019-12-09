@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css">
-  <title>Simple Sudoku</title>
-</head>
-<body>
-  <div id="grid"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Simple Sudoku</title>
+  </head>
+  <body>
+    <div id="grid"></div>
 
-  <section id="options">
-    <p id="penTypeToggle" onclick="togglePenType()">Toggle pen type - Pen</p>
-    <p>Settings</p>
-    <p>Instructions</p>
-    <p>Stats</p>
-    <p onclick="gameSetup()">New game</p>
-  </section>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="main.js"></script>
-
+    <section id="options">
+      <p id="game"></p>
+      <!-- <p id="penTypeToggle" onclick="togglePenType()">Toggle pen type - Pen</p> -->
+      <p>Settings</p>
+      <p>Instructions</p>
+      <p>Stats</p>
+      <!-- <p onclick="gameSetup()">New game</p> -->
+    </section>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="code.js"></script>
 </html>
