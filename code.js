@@ -1,13 +1,13 @@
 const permittedTable = [
-  [1, 2, 3, 4, 5, 6, 7, 8, 9],
-  [4, 5, 6, 7, 8, 9, 1, 2, 3],
-  [7, 8, 9, 1, 2, 3, 4, 5, 6],
-  [2, 3, 4, 5, 6, 7, 8, 9, 1],
-  [5, 6, 7, 8, 9, 1, 2, 3, 4],
-  [8, 9, 1, 2, 3, 4, 5, 6, 7],
-  [3, 4, 5, 6, 7, 8, 9, 1, 2],
-  [6, 7, 8, 9, 1, 2, 3, 4, 5],
-  [9, 1, 2, 3, 4, 5, 6, 7, 8]
+  [21, 22, 23, 24, 25, 26, 27, 28, 29],
+  [24, 25, 26, 27, 28, 29, 21, 22, 23],
+  [27, 28, 29, 21, 22, 23, 24, 25, 26],
+  [22, 23, 24, 25, 26, 27, 28, 29, 21],
+  [25, 26, 27, 28, 29, 21, 22, 23, 24],
+  [28, 29, 21, 22, 23, 24, 25, 26, 27],
+  [23, 24, 25, 26, 27, 28, 29, 21, 22],
+  [26, 27, 28, 29, 21, 22, 23, 24, 25],
+  [29, 21, 22, 23, 24, 25, 26, 27, 28]
 ];
 
 const unpermittedTable = [
@@ -64,5 +64,61 @@ const checkWholeTable = table => {
   }
 };
 
-checkWholeTable(permittedTable);
-console.log(tableViability);
+generateRandomArray = () => {
+  let randomSet = new Set();
+  while (randomSet.size < 9) {
+    randomSet.add(Math.ceil(Math.random() * 9));
+  }
+  randomArray = Array.from(randomSet);
+  return randomArray;
+};
+let tableBroken = false;
+generateLegalCell = (xIndex, yIndex, table) => {
+  randomArray = generateRandomArray();
+  for (let index = 0; index < 9; index++) {
+    // console.log(randomArray);
+    table[xIndex][yIndex] = randomArray[index];
+    checkWholeTable(table);
+    if (tableViability) {
+      break;
+    } else {
+      if (index === 8) {
+        tableBroken = true;
+      } else {
+        continue;
+      }
+    }
+  }
+};
+
+generateLegalRow = (yIndex, table) => {
+  table[yIndex].forEach((cell, index) =>
+    generateLegalCell(yIndex, index, table)
+  );
+};
+
+generateLegalGrid = table => {
+  for (let index = 0; index < 9; index++) {
+    generateLegalRow(index, table);
+    if ((tableBroken = false)) {
+      continue;
+    } else {
+      generateLegalRow(index, table);
+    }
+  }
+  // if ((tableBroken = false)) {
+  //   return table;
+  // } else {
+  //   // console.log(table);
+  //   generateLegalGrid(table);
+  // }
+};
+
+generateLegalGrid(permittedTable);
+console.log(permittedTable);
+
+// generateLegalCell(0, 0, permittedTable);
+// console.log(permittedTable);
+
+// checkWholeTable(permittedTable);
+// console.log(tableViability);
